@@ -48,7 +48,7 @@ public class Main {
         @Override
         public String toString() {
             return "Person{" +
-                    "name='" + name + '\'' +
+                   "name='" + name + '\'' +
                     ", gender=" + gender +
                     '}';
         }
