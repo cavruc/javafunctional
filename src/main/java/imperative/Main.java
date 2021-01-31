@@ -2,6 +2,7 @@ package imperative;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static imperative.Main.Gender.FEMALE;
 import static imperative.Main.Gender.MALE;
@@ -15,8 +16,8 @@ public class Main {
                 new Person("Alex", MALE),
                 new Person("Alise", FEMALE)
         );
+        System.out.println("Imperative approach");
 
-        // Imperative approach
         List<Person> females = new ArrayList<>();
 
         for (Person person : people) {
@@ -25,11 +26,22 @@ public class Main {
             }
         }
 
+
+
         for (Person female : females) {
             System.out.println(female);
         }
+        System.out.println("Declarative approach");
+        people.stream()
+                .filter(person -> FEMALE.equals(person.gender))
+                . collect(Collectors.toList())
+                .forEach(System.out::println);
+        System.out.println();
 
-
+        List<Person> female2 = people.stream()
+                .filter(person -> FEMALE.equals(person.gender))
+                .collect(Collectors.toList());
+        female2.forEach(System.out::println);
     }
 
     enum Gender {
