@@ -8,6 +8,8 @@ public class _Consumer {
         Customer maria = new Customer("Maria", "99999");
         greetCustomer(maria);
 // Consumer Java Interface
+
+
         greetCustomerConsumer.accept(maria);
         String name_1 = "Vera";
         giveOneName.accept(name_1);
