@@ -22,7 +22,7 @@ public class _Function {
         Function<Integer,Integer> checkFunction =
                 multiplyBy10.andThen(incrementByOneFunction);
 
-
+        System.out.println();
 
         System.out.println(checkFunction.apply(4));
     }
