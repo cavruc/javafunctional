@@ -23,11 +23,17 @@ public class self_Program {
                 .forEach(x -> System.out.println(x));
 
         people.stream()
-                .map(person -> person.name)
-                 .mapToInt(name -> name.length())
-                 .forEach(System.out::println);
+                .map(person -> person.name.length())
+                .collect(Collectors.toSet())
+                .forEach(System.out::println);
 
+        people.stream()
+                .filter(person -> person.age > 30)
+                .forEach(person -> System.out.println(person.name + " " + person.country));
 
+        people.stream()
+                .filter(person -> person.name.equals("Kiril"))
+                .forEach(person -> System.out.println(person));
     }
 
 
